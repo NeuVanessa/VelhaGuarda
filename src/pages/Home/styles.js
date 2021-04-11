@@ -1,11 +1,15 @@
-import { StyleSheet } from "react-native";
-
+import {StyleSheet} from 'react-native'
+import colors from '../../util/colors';
+import fonts from '../../util/fonts'
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#8257E5",
-    justifyContent: "center",
-  },
-});
-
-export default styles;
+   
+    container: {
+      backgroundColor:'blue'
+    },
+    texte: {
+     backgroundColor: colors.primary,
+     fontSize: fonts.input
+    }
+  });
+  
+  export  default styles;
