@@ -1,0 +1,12 @@
+{
+  "name": "VelhaGuarda",
+  "displayName": "VelhaGuarda",
+  "expo": {
+    "name": "VelhaGuarda",
+    "slug": "VelhaGuarda",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
