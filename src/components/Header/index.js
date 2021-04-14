@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -13,8 +13,11 @@ export default function Header({ title }) {
   }
 
   return (
+
     <View style={styles.container}>
-      <TouchableOpacity onPress={{}}>
+      <TouchableOpacity 
+      
+      onPress={{}}>
         <Icon
           style={styles.styleIcon}
           name="long-arrow-left"
@@ -24,5 +27,6 @@ export default function Header({ title }) {
       </TouchableOpacity>
       {title && <Text style={styles.styleTextProps}> {title} </Text>}
     </View>
+
   );
 }

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     position: "relative",
     flex: 8,
     backgroundColor: "#03045E",
-    marginTop: 300,
+    marginTop:100,
   },
   containerTextInput: {
     width: "100%",

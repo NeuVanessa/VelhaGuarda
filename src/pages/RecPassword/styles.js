@@ -5,15 +5,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#03045E",
   },
-  test: {
-    flex: 1,
-    backgroundColor: "red",
-  },
   containerRecPassword: {
     position: "relative",
-    flex: 8,
+    flex: 6,
     backgroundColor: "#03045E",
-    marginTop: 300,
+    marginTop: 15,
   },
   containerTextInput: {
     width: "100%",

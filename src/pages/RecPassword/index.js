@@ -8,7 +8,7 @@ export default function RecPasswordEmail() {
   const [senha, setSenha] = useState();
   const [confirme, setConfirme] = useState();
   return (
-    <View
+    <View 
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : ""}
       enabled
