@@ -12,7 +12,7 @@ import {
 import styles from "./styles";
 
 import Header from "../../components/Header";
-
+import Button from "../../components/Button";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function Home() {
@@ -105,9 +105,11 @@ export default function Home() {
               onChangeText={(value) => setnomeResponsavel(value)}
             />
 
-            <TouchableOpacity style={styles.containerButton}>
+            <Button title='Enviar'/>
+
+            {/* <TouchableOpacity style={styles.containerButton}>
               <Text style={styles.buttonText}>Enviar</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </ScrollView>
       </View>
