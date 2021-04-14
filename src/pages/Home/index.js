@@ -1,19 +1,13 @@
-import React from "react";
-import { View,Text } from "react-native";
-import styles from "./styles";
+import React from 'react';
+import { View,Text } from 'react-native';
+
+
 
 export default function Home() {
-  return (
+    return (
 
-<View style={styles.container}>
-
-
-<Text style={styles.texte}>Ola</Text>
-
-
-
-
-  </View>
-
-  )
+        <View>
+<Text>Olá Mundo</Text>
+        </View>
+    )
 }
