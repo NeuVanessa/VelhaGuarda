@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, ScrollView, TextInput } from "react-native";
+import { View, ScrollView, TextInput,Platform} from "react-native";
 
 import Header from "../../components/Header";
 import Button from "../../components/Button";
