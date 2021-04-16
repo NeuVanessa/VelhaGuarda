@@ -71,7 +71,7 @@ export default function Noticias() {
 
       <SafeAreaView>
         <ScrollView>
-          {/* Percorrendo o map*/}
+          {/* Percorrendo o array*/}
           {noticias.map((card) => {
             return (
               <View key={card.id} style={styles.viewCard}>
