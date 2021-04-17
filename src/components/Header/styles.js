@@ -17,9 +17,10 @@ const styles = StyleSheet.create({
   styleTextProps: {
     alignSelf: "center",
     fontSize: 25,
-    bottom: 12,
+    bottom: 18,
     fontFamily: "serif",
     color: "white",
+    position: "relative",
   },
 });
 
