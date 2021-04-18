@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
+    
   },
   styleIcon: {
     width: 50,

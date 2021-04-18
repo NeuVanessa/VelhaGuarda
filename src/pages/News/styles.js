@@ -3,62 +3,39 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "transparent",
   },
   viewCard: {
-    flex: 1,
-    width: "100%",
-    height: 335,
-    backgroundColor: "white",
-    padding: 10,
+    backgroundColor: "#009AED",
+    margin: 8,
+    borderColor: "blue",
+    borderRadius: 8,
+  },
+  textone: {
+    bottom: 18,
+    fontSize: 10,
+    color: "white",
+    fontFamily: "serif",
   },
   image: {
-    width: "100%",
+    width: "106%",
     height: 100,
-    top: 5,
-    left: 10,
-    position: "absolute",
+    bottom: 15,
+    left: -14,
+    borderRadius: 8,
   },
-  cardInfo: {
-    width: "100%",
-    height: 150,
-    top: 100,
-    left: 10,
-    position: "absolute",
-    backgroundColor: "#009AED",
-    flexDirection: "row",
-    alignContent: "space-between",
-  },
-  textInfo: {
-    left: 5,
-    position: "absolute",
-    color: "white",
-    fontSize: 12,
-    top: 2,
+  textwo: {
+    bottom: 20,
+    fontSize: 10,
+    color: "#444",
     fontFamily: "serif",
-
   },
-  textTitle: {
-
-    left: 3,
-    position: "absolute",
+  textree: {
+    bottom: 15,
+    fontSize: 15,
     color: "white",
-    fontSize: 14,
-    top: 20,
     fontFamily: "serif",
-    left: 5,
-
   },
-  safeContainer: {
-    width: "100%",
-    height: 100,
-    top: 40,
-
-  },
-  textSafe: {
-    color: "#000", fontSize: 15, padding: 10 
-
-  }
 });
 
 export default styles;

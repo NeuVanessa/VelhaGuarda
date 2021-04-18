@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Testando a rota de usuário não logado, substituir pela login pois é a primeira rota do app
-import Register from "../pages/Register";
+import Register from "../pages/News";
 
 
 const Stack = createStackNavigator();

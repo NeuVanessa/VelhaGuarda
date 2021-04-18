@@ -15,12 +15,12 @@ export default function Header({ title }) {
   const navigation = useNavigation();
 
   function _backLogin() {
-    navigation.navigate("Login");
+    navigation.navigate("Register");
   }
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={{}}>
+      <TouchableOpacity onPress={_backLogin}>
         <Image
           style={styles.styleIcon}
           source={require("../../assets/ButtonBack.png")}
