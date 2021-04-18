@@ -4,20 +4,23 @@ import {
   View,
   Text,
   TouchableOpacity,
-  SafeAreaView,
   Image,
 } from "react-native";
 
-import Icon from "react-native-vector-icons/FontAwesome";
 
 import styles from "./styles";
-export default function Header({ title }) {
-  const navigation = useNavigation();
-
+export default function HeaderHome() {
+  
+  {
+    /*Função Responsável por sair do aplicativo*/
+  }
   function _backOut() {
     alert("clicou!");
   }
 
+  {
+    /* Criando os components e a estilização do HeaderHome */
+  }
   return (
     <View style={styles.navBar}>
       <Text style={styles.adm}>Bem Vindo, Vanessa</Text>
