@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {View} from 'react-native';
-
+import {View,Text} from 'react-native';
+import Header from '../../components/HeaderHome'
 
 export default function Login() {
     return (
-<View>
-<Text> Ola </Text>
+        
+<View style={{flex:1, backgroundColor:'red'}}>
+<Header/>
 </View>
 
     );
