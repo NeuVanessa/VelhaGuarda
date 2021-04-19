@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
    alignSelf:'center',
    width: 100,
    height: 100,
-   bottom:30,
+   bottom:18,
    left:30
   },
   navBarHeader: {
