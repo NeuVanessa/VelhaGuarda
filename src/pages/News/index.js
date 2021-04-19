@@ -11,7 +11,7 @@ import {
 import styles from "./styles";
 
 import Header from "../../components/Header";
-
+import { Card } from "react-native-elements";
 import Button from "../../components/Button";
 import { TouchableOpacity } from "react-native-gesture-handler";
 export default function Noticias() {
@@ -20,20 +20,9 @@ export default function Noticias() {
   }
   const [noticias, setNotcias] = useState([
     {
-      id: 1,
-      author: "Vanessa",
-      category: "noticias",
-      title: "Fiocruz: situação da covid no Brasil",
-      description:
-        "Pesquisadores alertam para o alto índice de novas infecções e óbitos em todo o país, algo que deve persistir até o fim de abril.",
-      date: "14/04/2021",
-      uri:
-        "https://img.r7.com/images/ambulancia-covid-14042021164501544?dimensions=771x420&resize=771x420&amp;crop=1500x817+0+153resize=771x420&amp;crop=1500x817+0+153",
-    },
-    {
       id: 2,
-      author: "João",
-      category: "noticias",
+      author: "Vanessa",
+      category: "Noticias",
       title: "Biden Anuncia a Retirada de MILITARES",
       description:
         "Está na hora de encerrar a mais longa guerra dos EUA. É hora de os soldados americanos voltarem para casa, disse Biden em pronunciamento na Casa Branca.",
@@ -43,8 +32,8 @@ export default function Noticias() {
     },
     {
       id: 3,
-      author: "Vanessa ",
-      category: "noticias",
+      author: "Vanessa",
+      category: "Noticias",
       title: "Meteoro explode no céu durante transmissão",
       description:
         "O apresentador Jay O'Brien estava fazendo uma transmissão ao vivo no Facebook, quando um meteoro explodiu no céu, em West Palm Beach, no Sul da Flórida (EUA).",
@@ -54,52 +43,61 @@ export default function Noticias() {
     },
     {
       id: 4,
-      author: "Vanessa João",
-      category: "noticias",
+      author: "Vanessa",
+      category: "Noticias",
       title: "Magazine Luiza anuncia compra da plataforma Jovem Nerd",
       description:
-        "O conteúdo produzido pelo veículo de cultura pop, tecnologia e ciência será integrado ao SuperApp do Magalu",
+        "O conteúdo produzido pelo veículo de cultura pop, tecnologia e ciência será integrado ao SuperApp do Magalu.",
       date: "19/07/2020",
       uri:
         "http://www.larharmonia.org.br/conteudo/pub/003/cont/images/Vista-com-Guarita-03-HV.jpg",
     },
+    {
+      id: 1,
+      author: "Vanessa",
+      category: "Noticias",
+      title: "Fiocruz: situação da covid no Brasil",
+      description:
+        "Pesquisadores alertam para o alto índice de novas infecções e óbitos em todo o país, algo que deve persistir até o fim de abril.",
+      date: "14/04/2021",
+      uri:
+        "https://img.r7.com/images/ambulancia-covid-14042021164501544?dimensions=771x420&resize=771x420&amp;crop=1500x817+0+153resize=771x420&amp;crop=1500x817+0+153",
+    },
   ]);
   return (
     <View style={styles.container}>
-      {/* Header,Com Pros Text*/}
+      {/* Header,Com Props title*/}
       <Header title="Noticias" />
-
-      <SafeAreaView>
-        <ScrollView>
-          {/* Percorrendo o map*/}
-          {noticias.map((card) => {
-            return (
-              <View key={card.id} style={styles.viewCard}>
-                {/* Image da naticia, url */}
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri: card.uri,
-                  }}
-                />
-
-                <View style={styles.cardInfo}>
-                  {/* postagem feita pelo adm*/}
-                  <Text style={styles.textInfo}>
-                    Por {card.author} Em {card.category} Postado {card.date}
-                  </Text>
-                  <Text style={styles.textTitle}>
-                    <Text>{card.title}</Text>
-                  </Text>
-                  <SafeAreaView style={styles.safeContainer}>
-                    <Text style={styles.textSafe}>{card.description}</Text>
-                  </SafeAreaView>
-                </View>
-              </View>
-            );
-          })}
-        </ScrollView>
-      </SafeAreaView>
+      {/*Exibe o Array de noticias*/}
+      <FlatList
+        contentContainerStyle={{
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: -4,
+        }}
+        data={noticias}
+        keyExtractor={(user) => user.id.toString()}
+        renderItem={({ item }) => (
+          <View
+            style={{
+              height: 270,
+            }}
+          >
+            {/*Card estilizado*/}
+            <Card containerStyle={styles.viewCard}>
+              {/*Chamando a imagem uri*/}
+              <Image style={styles.image} source={{ uri: item.uri }} />
+              <SafeAreaView>
+                <Text style={styles.textone}>
+                  Por {item.author} Em {item.category} Postado {item.date}
+                </Text>
+                <Text style={styles.textwo}>{item.title}</Text>
+                <Text style={styles.textree}>{item.description}</Text>
+              </SafeAreaView>
+            </Card>
+          </View>
+        )}
+      />
     </View>
   );
 }

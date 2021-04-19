@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
+    
   },
   styleIcon: {
     width: 50,
@@ -17,9 +18,10 @@ const styles = StyleSheet.create({
   styleTextProps: {
     alignSelf: "center",
     fontSize: 25,
-    bottom: 12,
+    bottom: 18,
     fontFamily: "serif",
     color: "white",
+    position: "relative",
   },
 });
 

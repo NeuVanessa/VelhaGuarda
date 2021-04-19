@@ -1,29 +1,40 @@
 import React, { useState, useEffect } from "react";
-
+{
+  /* Importação dos components do react native */
+}
 import {
   View,
   Text,
   ScrollView,
   TextInput,
   TouchableOpacity,
-  Alert,
 } from "react-native";
 
+{
+  /* Responsável pela estilização */
+}
 import styles from "./styles";
 
 import Header from "../../components/Header";
-import Button from "../../components/Button";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
+{
+  /* Cliente HTTP */
+}
 import axios from "axios";
 
 export default function Register() {
-  
-   
+  {
+    /* API =>> { 192.168.100.10 ip do computador} {:80 porta do apache xamp } {/apvelhaguarda projeto dentro do htdocs/xamp}    */
+  }
   const api = "http://192.168.100.10:80/apvelhaguarda/";
-  
-  const [list, setList] = useState([]);
 
+  {
+    /* Para fazer a  listagem de users*/
+  }
+  const [list, setList] = useState([]);
+  {
+    /* Variáveis necessárias */
+  }
   const [endereco, setEndereco] = useState("");
   const [cep, setCep] = useState("");
   const [numero, setNumero] = useState("");
@@ -36,39 +47,25 @@ export default function Register() {
   const [nomeresponsavel, setnomeResponsavel] = useState("");
   const [nameInstituicao, setNameInstituicao] = useState("");
 
-  // let verificar = () => {
-  //   console.log(nameInstituicao, email, endereco, numero);
-
-  //   if (!nameInstituicao) {
-  //     alert("Nome da Instituição é Obrigatória!");
-  //     return;
-  //   }
-  //   if (!email) {
-  //     alert("Email é Obrigatório!");
-  //     return;
-  //   }
-  //   if (!endereco) {
-  //     alert("Endereço Obrigatório!");
-  //     return;
-  //   }
-  //   if (!numero) {
-  //     alert("Nº da Casa é Obrigatório!");
-  //     return;
-  //   }
-  // };
-
+  {
+    /* Listando todos os users */
+  }
   useEffect(() => {
     listarDados();
   }, []);
 
-  //verifica se já tem usuário cadastrado com o email informado
+  {
+    /* verifica se já tem usuário cadastrado com o email informado */
+  }
   async function listarDados() {
     const res = await axios.get(api + "listar.php");
     setList(res.data);
     console.log(res.data);
   }
 
-  //realiza o cadastro do usuário
+  {
+    /* realiza o cadastro do usuário */
+  }
   async function create() {
     const obj = {
       nameInstituicao,
@@ -84,13 +81,51 @@ export default function Register() {
       nomeresponsavel,
     };
     const res = await axios.post(api + "add.php", obj);
-    alert("registrado com sucesso cara");
-    listarDados();
-    console.log(res.data);
+    {
+      /* Esses consoles é somente para verificação ver se ta tudo ok!*/
+    }
+    // console.log('DADOS ===> ',res);
+    // console.log('DADOS ===> ',obj);
+
+    {
+      /* Tratamento do cadastro de usuário */
+    }
+    if (!nameInstituicao) {
+      alert("Nome da Instituição é Obrigatória!");
+      return;
+    }
+    if (!email) {
+      alert("Email é Obrigatório!");
+      return;
+    }
+    if (!endereco) {
+      alert("Endereco é Obrigatório!");
+      return;
+    }
+
+    if (!numero) {
+      alert("Nº da Casa é Obrigatório!");
+      return;
+    }
+    if (email === email) {
+      alert("Email tem que ser diferente do email cadastrado");
+      return;
+    } else {
+      {
+        /*Faz a inclusão do usuário no banco de dados*/
+      }
+      listarDados();
+      alert("registrado com sucesso!");
+      {
+        /* Esses consoles usados é para fazer a verificação do funcionamento das coisas*/
+      }
+      // console.log(res.data);
+    }
   }
 
   return (
     <View style={styles.container}>
+      {/* Header com a props title */}
       <Header title="Cadastro" />
 
       <View style={styles.containerRegister}>
