@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Header from "../../components/HeaderHome";
-
+import { useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -24,7 +24,12 @@ const icons = {
   /* Pagina Home */
 }
 const Home = () => {
+  const navigation = useNavigation();
+  function ir_ServiceHelp() {
+    navigation.navigate("ServiceHelp");
   
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: "transparent" }}>
       <Header />
@@ -97,7 +102,10 @@ const Home = () => {
           {/* Container Botão 2      Atendimento*/}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica}>
+              <TouchableOpacity
+                style={styles.BotaoDica}
+                onPress={ir_ServiceHelp}
+              >
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonMedical.png")}

@@ -9,16 +9,16 @@ const styles = StyleSheet.create({
     
   },
   styleIcon: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     position: "relative",
-    top: 18,
+    top:30,
     left: 5,
   },
   styleTextProps: {
     alignSelf: "center",
     fontSize: 25,
-    bottom: 18,
+    bottom: 10,
     fontFamily: "serif",
     color: "white",
     position: "relative",

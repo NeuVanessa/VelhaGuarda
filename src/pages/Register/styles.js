@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   inpuText: {
-    width: "98%",
+    width: "97%",
     top: 25,
     backgroundColor: "#efefef",
     borderRadius: 4,
@@ -24,16 +24,15 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     fontSize: 10,
     fontFamily: "serif",
-    margin: 5,
+    margin:5
   },
   containerButton: {
-    marginTop: 40,
+    marginTop: 35,
     marginBottom: 20,
     alignItems: "center",
     backgroundColor: "#009AED",
     borderRadius: 4,
-    width: "98%",
-    margin: 5,
+    width: "100%",
     fontFamily: "serif",
   },
   buttonText: {

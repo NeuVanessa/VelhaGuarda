@@ -134,7 +134,7 @@ export default function Register() {
             <TextInput
               style={styles.inpuText}
               placeholder="Nome da Instituição"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={nameInstituicao}
               onChangeText={(nomeInstituicao) =>
                 setNameInstituicao(nomeInstituicao)
@@ -143,28 +143,28 @@ export default function Register() {
             <TextInput
               style={styles.inpuText}
               placeholder="Endereço"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={endereco}
               onChangeText={(endereco) => setEndereco(endereco)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="CEP"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={cep}
               onChangeText={(cep) => setCep(cep)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Número"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={numero}
               onChangeText={(numero) => setNumero(numero)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Cidade"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={cidade}
               onChangeText={(cidade) => setCidade(cidade)}
             />
@@ -172,21 +172,21 @@ export default function Register() {
             <TextInput
               style={styles.inpuText}
               placeholder="Estado"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={estado}
               onChangeText={(estado) => setEstado(estado)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Email"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={email}
               onChangeText={(email) => setEmail(email)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Usuário"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={usuario}
               onChangeText={(usuario) => setUsuario(usuario)}
             />
@@ -194,21 +194,21 @@ export default function Register() {
             <TextInput
               style={styles.inpuText}
               placeholder="Senha"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={senha}
               onChangeText={(senha) => setSenha(senha)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Telefone"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={telefone}
               onChangeText={(telefone) => setTelefone(telefone)}
             />
             <TextInput
               style={styles.inpuText}
               placeholder="Nome Responsável"
-              placeholderTextColor="#03045E"
+              placeholderTextColor="#999"
               value={nomeresponsavel}
               onChangeText={(nomeresponsavel) =>
                 setnomeResponsavel(nomeresponsavel)

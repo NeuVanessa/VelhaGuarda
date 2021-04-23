@@ -15,7 +15,7 @@ export default function Header({ title }) {
   const navigation = useNavigation();
 
   function _backLogin() {
-    navigation.navigate("Register");
+    navigation.navigate("Login");
   }
 
   return (
