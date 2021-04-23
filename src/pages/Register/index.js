@@ -116,6 +116,7 @@ export default function Register() {
       }
       listarDados();
       alert("registrado com sucesso!");
+      
       {
         /* Esses consoles usados é para fazer a verificação do funcionamento das coisas*/
       }

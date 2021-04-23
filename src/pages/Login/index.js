@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import {
   View,
@@ -12,49 +12,79 @@ import {
   Alert,
   KeyboardAvoidingView,
 } from "react-native";
-import { useNavigation} from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 import bgImage from "../../assets/Bg.jpeg";
 import logo from "../../assets/logo.png";
 import login from "../../assets/user_50px.png";
 import key from "../../assets/key_40px.png";
+import axios from "axios";
+
 export default function Login() {
+  // const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
-  const navigation = useNavigation();
+  const api = "http://192.168.100.10:80/apvelhaguarda/";
+  const [usuario, setUsuario] = useState("");
+  const [senha, setSenha] = useState("");
 
- function ir_Home() {
-  navigation.navigate("Home") ;
- }
+  function ir_Register() {
+    navigate("Register");
+  }
 
- function ir_Register() {
-  navigation.navigate("Register") ;
- }
+  function ir_RecEmail() {
+    navigate("RecEmail");
+  }
 
- function ir_RecEmail() {
-  navigation.navigate("RecEmail") ;
- }
-
+  async function ir_login() {
+    const obj = { usuario, senha };
+    // console.log("DADOS ---->", obj);
+    const res = await axios.post(api + "login.php", obj);
+    // console.log("RES ---->", res);
+    if (res.data.success === "Dados Incorretos!") {
+      alert("Dados Está incorreto");
+    } else {
+      alert("Bem Vindo de Volta " + usuario);
+      navigate("Home");
+    }
+  }
 
   return (
     <KeyboardAvoidingView style={styles.container}>
       <ImageBackground style={styles.bgImage} source={bgImage}>
-        <Image style={{width:130,height:130}} source={logo} />
+        <Image style={{ width: 130, height: 130 }} source={logo} />
 
         <View style={styles.inputContainer}>
-          <TextInput style={styles.inputs} placeholder="Usuário" />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Usuário"
+            value={usuario}
+            onChangeText={(usuario) => setUsuario(usuario)}
+          />
           <Image style={styles.inputIcon} source={login} />
         </View>
         <View style={styles.inputContainer}>
-          <TextInput style={styles.inputs} placeholder="Senha" />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Senha"
+            value={senha}
+            onChangeText={(senha) => setSenha(senha)}
+          />
           <Image style={styles.inputIcon} source={key} />
         </View>
 
-        <TouchableOpacity style={styles.btnForgotPassword} onPress={ir_RecEmail}>
+        <TouchableOpacity
+          style={styles.btnForgotPassword}
+          onPress={ir_RecEmail}
+        >
           <Text style={styles.btnText}>Esqueceu a senha ?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.buttonContainer, styles.loginButton]} onPress={ir_Home}>
-          <Text style={styles.loginText}>Entrar</Text>
+        <TouchableOpacity
+          style={[styles.buttonContainer, styles.loginButton]}
+          onPress={ir_login}
+        >
+          <Text style={styles.loginText}> Entrar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.buttonContainer} onPress={ir_Register}>
@@ -89,7 +119,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginLeft: 16,
     borderBottomColor: "#FFFFFF",
-    fontFamily:'serif',
+    fontFamily: "serif",
     flex: 1,
   },
   inputIcon: {
@@ -97,7 +127,7 @@ const styles = StyleSheet.create({
     height: 30,
     marginRight: 15,
     justifyContent: "center",
-        fontFamily:'serif',
+    fontFamily: "serif",
   },
   buttonContainer: {
     height: 45,
@@ -115,14 +145,14 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     marginBottom: 10,
     width: 300,
-        fontFamily:'serif',
+    fontFamily: "serif",
   },
   loginButton: {
     backgroundColor: "#009AED",
   },
   loginText: {
     color: "white",
-    fontFamily:'serif',
+    fontFamily: "serif",
   },
   bgImage: {
     resizeMode,
@@ -133,6 +163,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: "#03045E",
-    fontFamily:'serif',
+    fontFamily: "serif",
   },
 });
