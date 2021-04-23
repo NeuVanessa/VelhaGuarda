@@ -41,10 +41,18 @@ export default function Login() {
     // console.log("DADOS ---->", obj);
     const res = await axios.post(api + "login.php", obj);
     // console.log("RES ---->", res);
+    if (!usuario) {
+      alert("Informe o nome de usuário♥!");
+      return;
+    }
+    if (!senha) {
+      alert("Informe a senha♥! ");
+      return;
+    }
     if (res.data.success === "Dados Incorretos!") {
       alert("Dados Está incorreto");
     } else {
-      alert("Bem Vindo de Volta " + usuario);
+      alert("Bem Vindo de Volta " + usuario) ;
       navigate("Home");
     }
   }
