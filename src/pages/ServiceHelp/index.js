@@ -25,6 +25,7 @@ export default function ServiceHelp() {
   return (
     
     <View>
+
       {/* Topo da tela */}
       <View  style={Style.Header}>
         <Header />
@@ -222,6 +223,9 @@ export default function ServiceHelp() {
         </Modal>
       </View>
       
+
+
+      <Text style={{top:100}}>RESERVADO PARA O ATENDIMENTO </Text>
 
     </View>
   );

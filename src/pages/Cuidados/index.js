@@ -9,8 +9,14 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 export default function Cuidados() {
+  const { navigate } = useNavigation();
+
+    function Home() {
+      navigate("Home")
+    }
+
   const [dicaCuidado, setDicaCuidado] = useState(
     "Toque em algum dos ícones para ler mais sobre os meios de prevenção! :)"
   );
@@ -56,7 +62,7 @@ export default function Cuidados() {
       {/* Topo da página, azul */}
       <View style={style.Topo}>
         {/* Botão de voltar */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={Home}>
           <Image
             style={style.BackButton}
             source={require("../../assets/ButtonBack.png")}

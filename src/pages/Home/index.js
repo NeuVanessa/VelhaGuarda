@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Header from "../../components/HeaderHome";
-
+import { useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -24,7 +24,37 @@ const icons = {
   /* Pagina Home */
 }
 const Home = () => {
-  
+  const { navigate } = useNavigation();
+
+  function ir_ServiceHelp() {
+    navigate("ServiceHelp");
+  }
+  function ir_News() {
+    navigate("News");
+  }
+  function ir_Care() {
+    navigate("Care");
+  }
+
+  function ir_Developer() {
+    navigate("Developer");
+  }
+
+  function ir_Version() {
+    navigate("Version");
+  }
+  function Register_Idoso() {
+    navigate("RegisterIdoso");
+  }
+  function ir_Contact() {
+    navigate("Contact");
+  }
+  function ir_Vaccine() {
+    navigate("Vaccine");
+  }
+  function ir_Medication() {
+    navigate("Medication");
+  }
   return (
     <View style={{ flex: 1, backgroundColor: "transparent" }}>
       <Header />
@@ -43,7 +73,7 @@ const Home = () => {
           {/* Container 1 Botão Vacinação */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={{ alignSelf: "center" }}>
+              <TouchableOpacity style={{ alignSelf: "center" }} onPress={ir_Vaccine}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonVacinne.png")}
@@ -56,7 +86,10 @@ const Home = () => {
           {/* Container 2 Botão Cuidados */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={{ alignSelf: "center" }}>
+              <TouchableOpacity
+                onPress={ir_Care}
+                style={{ alignSelf: "center" }}
+              >
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/UseAlcool.png")}
@@ -68,7 +101,7 @@ const Home = () => {
           {/* Container 3 Botão Medicamentos */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica}>
+              <TouchableOpacity style={styles.BotaoDica} onPress={ir_Medication}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonMedicament.png")}
@@ -84,7 +117,7 @@ const Home = () => {
           {/* Container Botão 1 Noticias*/}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica}>
+              <TouchableOpacity style={styles.BotaoDica} onPress={ir_News}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonNews.png")}
@@ -97,7 +130,10 @@ const Home = () => {
           {/* Container Botão 2      Atendimento*/}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica}>
+              <TouchableOpacity
+                style={styles.BotaoDica}
+                onPress={ir_ServiceHelp}
+              >
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonMedical.png")}
@@ -110,7 +146,7 @@ const Home = () => {
           {/* Container Botão 3      Desenvolvedores*/}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica}>
+              <TouchableOpacity style={styles.BotaoDica} onPress={ir_Developer}>
                 {/* Dica 6 - Evite aglomerações */}
                 <Image
                   style={styles.ImgDica}
@@ -127,7 +163,7 @@ const Home = () => {
           {/*Container 1 Registro  */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={Register_Idoso}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonRegister.png")}
@@ -140,7 +176,7 @@ const Home = () => {
           {/* Container 2 Fale Conosco */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={ir_Contact}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/FaleConosco.png")}
@@ -152,7 +188,7 @@ const Home = () => {
           {/*Container 3 Versão */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={ir_Version}>
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/Versao.png")}

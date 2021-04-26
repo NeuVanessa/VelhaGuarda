@@ -23,7 +23,7 @@ export default function HeaderHome() {
   }
   return (
     <View style={styles.navBar}>
-      <Text style={styles.adm}>Bem Vindo, Vanessa</Text>
+      <Text style={styles.adm}>Vanessa</Text>
 
       <View style={styles.navBarHeader}>
         <Image

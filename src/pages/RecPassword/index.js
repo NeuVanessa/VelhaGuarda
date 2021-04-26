@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { View, ScrollView, TextInput, Alert } from "react-native";
+import { View, ScrollView, TextInput } from "react-native";
 import styles from "./styles";
 
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 export default function RecPasswordEmail() {
+
+  
   const [senha, setSenha] = useState();
   const [confirme, setConfirme] = useState();
+
+
+
   return (
     <View 
       style={styles.container}
@@ -30,7 +35,7 @@ export default function RecPasswordEmail() {
               placeholderTextColor="#03045E"
               onChangeText={(value) => setConfirme(value)}
             />
-            <Button title="Enviar" />
+            <Button  title="Enviar" />
           </View>
         </ScrollView>
       </View>
