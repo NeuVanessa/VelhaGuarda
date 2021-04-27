@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Header from "../../components/HeaderHome";
 import { useNavigation } from "@react-navigation/native";
@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Vaccine from "../Vaccine";
 import styles from "./styles";
+import { ScrollView } from "react-native-gesture-handler";
 
 {
   /* Icons Usado no Tabs Navigation */
@@ -23,6 +24,12 @@ const icons = {
 {
   /* Pagina Home */
 }
+
+const image1 = {
+  uri:
+    "https://redesuperpopular.com.br/wp-content/uploads/2015/07/Banner-021-300x143.jpg",
+};
+
 const Home = () => {
   const { navigate } = useNavigation();
 
@@ -59,7 +66,68 @@ const Home = () => {
     <View style={{ flex: 1, backgroundColor: "transparent" }}>
       <Header />
 
-      <View style={{ flex: 2, backgroundColor: "#444" }}></View>
+      <View style={{ flex: 2, backgroundColor: "#444",top:5}}>
+        <ScrollView horizontal={true}>
+          <View
+            style={{
+              marginTop: 0,
+              width: 280,
+              borderWidth: 10,
+              borderColor: "#009AED",
+              color: "#009AED",
+              fontSize: 20,
+            
+            }}
+          >
+            <Image
+              style={{ width: 260, height: 205 }}
+              source={{
+                uri:
+                  "https://image.freepik.com/vetores-gratis/folheto-informativo-de-vacinacao-contra-coronavirus-desenhado_23-2148835496.jpg",
+              }}
+            />
+          </View>
+          <View
+            style={{
+              marginTop: 0,
+              width: 280,
+              borderWidth: 10,
+              borderColor: "#009AED",
+              color: "#009AED",
+              fontSize: 20,
+              backgroundColor: "white",
+            }}
+          >
+            <Image
+              style={{ width: 260, height: 205 }}
+              source={{
+                uri:
+                  "https://image.freepik.com/vetores-gratis/pagina-inicial-de-vacina-de-coronavirus-desenhada-a-mao-plana_23-2148853727.jpg",
+              }}
+            />
+          </View>
+
+          <View
+            style={{
+              marginTop: 0,
+              width: 280,
+              borderWidth: 10,
+              borderColor: "#009AED",
+              color: "#009AED",
+              fontSize: 20,
+              backgroundColor: "white",
+            }}
+          >
+            <Image
+              style={{ width: 260, height: 205 }}
+              source={{
+                uri:
+                  "https://image.freepik.com/vetores-gratis/informacoes-das-fases-da-vacina-contra-o-coronavirus_23-2148889013.jpg",
+              }}
+            />
+          </View>
+        </ScrollView>
+      </View>
       {/* Definindo a direção com Row */}
       <View
         style={{
@@ -73,7 +141,10 @@ const Home = () => {
           {/* Container 1 Botão Vacinação */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={{ alignSelf: "center" }} onPress={ir_Vaccine}>
+              <TouchableOpacity
+                style={{ alignSelf: "center" }}
+                onPress={ir_Vaccine}
+              >
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonVacinne.png")}
@@ -101,7 +172,10 @@ const Home = () => {
           {/* Container 3 Botão Medicamentos */}
           <View style={styles.ContainerButton}>
             <View style={styles.BotaoDica}>
-              <TouchableOpacity style={styles.BotaoDica} onPress={ir_Medication}>
+              <TouchableOpacity
+                style={styles.BotaoDica}
+                onPress={ir_Medication}
+              >
                 <Image
                   style={styles.ImgDica}
                   source={require("../../assets/ButtonMedicament.png")}

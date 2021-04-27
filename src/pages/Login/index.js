@@ -131,11 +131,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputIcon: {
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     marginRight: 15,
     justifyContent: "center",
-    fontFamily: "serif",
   },
   buttonContainer: {
     height: 45,
