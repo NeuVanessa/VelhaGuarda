@@ -4,13 +4,12 @@ import fonts from "../../util/fonts";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#03045E",
+    backgroundColor: "#009AED",
   },
   containerRegister: {
     flex: 8,
-    backgroundColor: "#03045E",
+    backgroundColor: "white",
   },
-  containerClear: {},
   containerTextInput: {
     width: "100%",
     marginBottom: 30,
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     fontSize: 10,
     fontFamily: "serif",
-    margin:5
+    margin: 5,
   },
   containerButton: {
     marginTop: 35,
@@ -38,6 +37,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 28,
     color: "#fff",
+    fontFamily:"serif"
   },
 });
 
