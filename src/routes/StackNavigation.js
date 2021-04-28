@@ -6,12 +6,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../pages/Login";
 // Testando a rota de usuário não logado, substituir pela login pois é a primeira rota do app
 import Home from "../pages/Home";
-
-// Testando a rota de atendimento.
-import ServiceHelp from '../pages/ServiceHelp'
-
-
-
 import Register from "../pages/Register";
 import RecEmail from "../pages/RecPasswordEmail";
 import RecPassword from "../pages/RecPassword";
@@ -24,7 +18,6 @@ import Contact from "../pages/Contact";
 import ServiceHelp from "../pages/ServiceHelp";
 import Vaccine from "../pages/Vaccine";
 import Medication from "../pages/Medication";
-
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -38,8 +31,8 @@ export default function App() {
         />
         <Stack.Screen
           options={{ headerShown: false }}
-          name="ServiceHelp"
-          component={ServiceHelp}
+          name="Home"
+          component={Home}
         />
         <Stack.Screen
           options={{ headerShown: false }}

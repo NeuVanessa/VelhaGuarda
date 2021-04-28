@@ -1,232 +1,109 @@
 import React, { useState } from "react";
-import { 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  TextInput,
+import {
+  View,
   ScrollView,
-  Modal,
   Image,
+  Text,
+  SafeAreaView,
+  FlatList,
 } from "react-native";
 
-import Header from './../../components/Header/index';
-import Style from './style'
+import styles from "./styles";
 
-
+import Header from "../../components/Header";
+import { Card } from "react-native-elements";
+import Button from "../../components/Button";
+import { Rating, AirbnbRating } from "react-native-elements";
 
 export default function ServiceHelp() {
-
-  const [modalV, setModalV] = useState(false);
-  const [quantidade1, setQuantidade1] = useState(0);
-  const [quantidade2, setQuantidade2] = useState(0);
-  const [quantidade3, setQuantidade3] = useState(0);
-  const [quantidade4, setQuantidade4] = useState(0);
+  {
+    /* Criação das Atendimento */
+  }
+  const [atendimento, setAtendimento] = useState([
+    {
+      id: 1,
+      name: "Dra. Mariana Matos",
+      title: "Médica Psiquiatra",
+      crm: "35485",
+      description:
+        "Médica formada pela Escola Baiana de Medicina e Saúde Pública Residência médica em psiquiatria pelo Hospital Universitário Edgard Santos, UFBA.",
+      uri:
+        "https://s3-sa-east-1.amazonaws.com/doctoralia.com.br/doctor/f66951/f66951324d70f23016847cb51bfca9c3_large.jpg",
+    },
+    {
+      id: 2,
+      name: "Dr. Rodrigo Dantas",
+      title: "Médico Psiquiatra",
+      crm: "27402",
+      description:
+        "A escuta é um ponto diferencial na prática clinica. Quando feita de forma acolhedora, cuidadosa e precisa permite intervenções terapêuticas eficazes (sejam elas medicamentosas ou pela via da palavra) e inaugura-se uma possibilidade de mudança de posição ao indivíduo.",
+      uri:
+        "https://s3-sa-east-1.amazonaws.com/doctoralia.com.br/doctor/abc610/abc610532ea12c7b7abea3e516c26602_large.jpg",
+    },
+    {
+      id: 3,
+      name: "Joyce Santana",
+      title: "Nutricionista",
+      crm: "21553",
+      description:
+        "Sou especialista em fisiologia do exercício e nutrição clínica funcional. Ajudo esportistas e atletas a melhorarem a performance com qualidade de vida.",
+      uri:
+        "https://s3-sa-east-1.amazonaws.com/doctoralia.com.br/doctor/eb6979/eb6979a121c659f208eff3d23a2fac54_large.jpg",
+    },
+  ]);
 
   return (
-    
-    <View>
-
-      {/* Topo da tela */}
-      <View  style={Style.Header}>
-        <Header />
-        <Text style={Style.Title}>Atendimento</Text>
-      </View>
-
-      {/* View Que contém campo de inputs e botão de consulta */}
-      <View style={Style.ViewInput}>
-        <Text style={Style.SubBlack}>Digite o nome do medicamento:</Text>
-        <TextInput 
-        placeholderTextColor={'#009AED'}
-        style={Style.Inputs} 
-        placeholder='nome do medicamento' />
-        
-        <TouchableOpacity onPress={() => {setModalV(true)}} style={Style.Button} >
-          <Text style={Style.TextButton}>Consultar
-          </Text>
-        </TouchableOpacity>
-      </View>
-
-
-      {/* RESULTADO */}
-
-      <View style={Style.ViewResult}>
-        <Modal
-          style={Style.ModalResult}
-          animationType='slide'
-          visible={modalV}
+    <View style={styles.container}>
+      {/* Header,Com Props title*/}
+      <Header title="Atendimento" />
+      {/*Exibe o Array de noticias*/}
+      <FlatList
+        contentContainerStyle={{
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: -4,
+        }}
+        data={atendimento}
+        keyExtractor={(user) => user.id.toString()}
+        renderItem={({ item }) => (
+          <View
+            style={{
+              height: 380,
+            }}
           >
+            {/*Card estilizado*/}
+            <Card containerStyle={styles.viewCard}>
+              {/*Chamando a imagem uri*/}
+              <Image style={styles.image} source={{ uri: item.uri }} />
+              <SafeAreaView>
+                <Text style={styles.textone}>{item.title}</Text>
+                <Text style={styles.textwo}>{item.name}</Text>
+                <Text style={styles.texfor}>CRM: {item.crm}</Text>
+                <Text style={styles.textree}>{item.description}</Text>
 
-            {/* DIPIRONA */}
-          <Text style={Style.TextResultado}>Resultados: </Text>
-          <ScrollView style={Style.Scroll}>
-            <View style={Style.Result}>
-                  <Image 
-                  style={Style.IconRemedio}
-                  source={require('../../assets/Dipirona.jpg')} />
-                  <View style={Style.InfoRemedio}>
-                      <Text style={Style.TituloRemedio}>Dipirona</Text>
-                      <ScrollView style={Style.InfoScroll}>
-                          <Text style={Style.DescricaoRemedio}>Lorem IpsumLorem IpsumLoremIpsumLoremLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</Text>
-                      </ScrollView>
-                     
-                     {/* QUANTIDADE */}
-                     <Text style={Style.qntTxt}>Quantidade</Text>
-                     <View style={Style.quantidadeView}>
-                        <Text style={Style.PrecoRemedio}>R$ 15,00</Text>
-                        
-                        <TouchableOpacity
-                            onPress={() => {
-                              quantidade1 != 0 ? setQuantidade1(quantidade1 - 1)
-                              :false                              
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>-</Text>
-                        </TouchableOpacity>
+                <SafeAreaView style={{ top: -70 }}>
+                  <AirbnbRating
+                    count={5}
+                    reviews={[
+                      "Atendimento Razoável.",
+                      "Atendimento Bom.",
+                      "Atendimento Excelente.",
+                      "Atendimento Master.",
+                      "Atendimento Super.",
+                    ]}
+                    defaultRating={15}
+                    size={20}
+                  />
+                </SafeAreaView>
 
-                        <Text style={Style.textoQuant}>{quantidade1}</Text>
-
-                        <TouchableOpacity
-                            onPress={() => { 
-                              setQuantidade1(quantidade1 +1)
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>+</Text>
-                        </TouchableOpacity>
-                      </View>
-                      
-
-                  </View>
-            </View>
-            {/* NIMESULIDA */}
-            <View style={Style.Result}>
-              <Image 
-                    style={Style.IconRemedio}
-                    source={require('../../assets/Nimesulida.jpg')} />
-                    <View style={Style.InfoRemedio}>
-                        <Text style={Style.TituloRemedio}>Nimesulida</Text>
-                        <ScrollView style={Style.InfoScroll}>
-                            <Text style={Style.DescricaoRemedio}>Lorem IpsumLorem IpsumLoremIpsumLoremLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</Text>
-                        </ScrollView>
-                        
-                        {/* QUANTIDADE */}
-                     <Text style={Style.qntTxt}>Quantidade</Text>
-                     <View style={Style.quantidadeView}>
-                     <Text style={Style.PrecoRemedio}>R$ 19,99</Text>
-                                               
-                        <TouchableOpacity
-                            onPress={() => {
-                              quantidade2 != 0 ? setQuantidade2(quantidade2 - 1)
-                              :false                              
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>-</Text>
-                        </TouchableOpacity>
-
-                        <Text style={Style.textoQuant}>{quantidade2}</Text>
-
-                        <TouchableOpacity
-                            onPress={() => { 
-                              setQuantidade2(quantidade2 +1)
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>+</Text>
-                        </TouchableOpacity>
-                      </View>
-                                          
-                    </View>
- 
-            </View>
-            
-            {/* IBUPROFENO */}
-            <View style={Style.Result}>
-                  <Image 
-                      style={Style.IconRemedio}
-                      source={require('../../assets/Ibuprofeno.png')} />
-                      <View style={Style.InfoRemedio}>
-                          <Text style={Style.TituloRemedio}>Ibuprofeno</Text>
-                          <ScrollView style={Style.InfoScroll}>
-                              <Text style={Style.DescricaoRemedio}>Lorem IpsumLorem IpsumLoremIpsumLoremLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</Text>
-                          </ScrollView>
-                        
-                          <Text style={Style.qntTxt}>Quantidade</Text>
-                     <View style={Style.quantidadeView}>
-                     <Text style={Style.PrecoRemedio}>R$ 12,99</Text>
-                                               
-                        <TouchableOpacity
-                            onPress={() => {
-                              quantidade3 != 0 ? setQuantidade3(quantidade3 - 1)
-                              :false                              
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>-</Text>
-                        </TouchableOpacity>
-
-                        <Text style={Style.textoQuant}>{quantidade3}</Text>
-
-                        <TouchableOpacity
-                            onPress={() => { 
-                              setQuantidade3(quantidade3 +1)
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>+</Text>
-                        </TouchableOpacity>
-                      </View>
-                      </View>
-
-            </View>
-
-            {/* DORFLEX */}
-            <View style={Style.Result}>
-                  <Image 
-                      style={Style.IconRemedio}
-                      source={require('../../assets/dorflex.jpg')} />
-                      <View style={Style.InfoRemedio}>
-                          <Text style={Style.TituloRemedio}>Dorflex</Text>
-                          <ScrollView style={Style.InfoScroll}>
-                              <Text style={Style.DescricaoRemedio}>Lorem IpsumLorem IpsumLoremIpsumLoremLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</Text>
-                          </ScrollView>
-
-                          <Text style={Style.qntTxt}>Quantidade</Text>
-                     <View style={Style.quantidadeView}>
-                     <Text style={Style.PrecoRemedio}>R$ 9,99</Text>
-                                               
-                        <TouchableOpacity
-                            onPress={() => {
-                              quantidade4 != 0 ? setQuantidade4(quantidade4 - 1)
-                              :false                              
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>-</Text>
-                        </TouchableOpacity>
-
-                        <Text style={Style.textoQuant}>{quantidade4}</Text>
-
-                        <TouchableOpacity
-                            onPress={() => { 
-                              setQuantidade4(quantidade4 +1)
-                            }}
-                            style={Style.quant}>
-                            <Text style={Style.txtQuant}>+</Text>
-                        </TouchableOpacity>
-                      </View>
-                      </View>
-
-                      
-            </View>
-            
-          </ScrollView>
-
-          <TouchableOpacity onPress={() => {setModalV(false)}} style={Style.Button} >
-            <Text style={Style.TextButton}>Fechar
-            </Text>
-          </TouchableOpacity>
-        </Modal>
-      </View>
-      
-
-
-      <Text style={{top:100}}>RESERVADO PARA O ATENDIMENTO </Text>
-
+                <View style={{ top: -110 }}>
+                  <Button title="Agendar Consulta" />
+                </View>
+              </SafeAreaView>
+            </Card>
+          </View>
+        )}
+      />
     </View>
   );
 }

@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     ContainerButton: {
       flex: 1,
       backgroundColor: "transparent",
+      top:15
     },
     StyleCol: {
       backgroundColor: "transparent",
