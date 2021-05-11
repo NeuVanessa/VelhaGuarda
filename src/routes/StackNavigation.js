@@ -24,6 +24,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          options={{ headerShown: false }}
+          name="Developer"
+          component={Developer}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Version"
+          component={Version}
+        />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Login"
@@ -58,16 +68,6 @@ export default function App() {
           options={{ headerShown: false }}
           name="Care"
           component={Care}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Version"
-          component={Version}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Developer"
-          component={Developer}
         />
         <Stack.Screen
           options={{ headerShown: false }}
