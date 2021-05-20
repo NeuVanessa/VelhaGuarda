@@ -1,23 +1,21 @@
 import { StyleSheet } from "react-native";
-
+import colors from "../../util/colors";
+import fonts from "../../util/fonts";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#009AED",
   },
-
-  containerRecPassword: {
-    position: "relative",
+  containerRegister: {
     flex: 8,
     backgroundColor: "white",
-    marginTop:100,
   },
   containerTextInput: {
     width: "100%",
     marginBottom: 30,
   },
   inpuText: {
-    width: "98%",
+    width: "97%",
     top: 25,
     backgroundColor: "#efefef",
     borderRadius: 4,
@@ -26,6 +24,20 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "serif",
     margin: 5,
+  },
+  containerButton: {
+    marginTop: 35,
+    marginBottom: 20,
+    alignItems: "center",
+    backgroundColor: "#009AED",
+    borderRadius: 4,
+    width: "100%",
+    fontFamily: "serif",
+  },
+  buttonText: {
+    fontSize: 28,
+    color: "#fff",
+    fontFamily:"serif"
   },
 });
 

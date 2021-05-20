@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#03045E",
+    backgroundColor: "white",
   },
   containerRecPassword: {
     position: "relative",
     flex: 6,
-    backgroundColor: "#03045E",
+    backgroundColor: "white",
     marginTop: 15,
   },
   containerTextInput: {
