@@ -59,6 +59,16 @@ export default function Developer() {
     uri: URLM,
   };
 
+  const giovana = {
+    nome: "Giovana Almeida",
+    curso: "Análise e Desenvolvimento de Sistemas",
+    semestre: 5,
+    linkedin: false,
+    github: false,
+    uri:  URL,
+  };
+
+
   return (
     <View>
       {/* Topo da tela */}
@@ -99,6 +109,18 @@ export default function Developer() {
           }}
         >
           <Text style={styles.BotaoTxt}>Michel</Text>
+        </TouchableOpacity>
+
+
+            {/* Aluno4 */}
+            <TouchableOpacity
+          style={styles.Botao}
+          onPress={() => {
+            setDev(giovana);
+            setModalVisible(true);
+          }}
+        >
+          <Text style={styles.BotaoTxt}>Giovana</Text>
         </TouchableOpacity>
       </View>
 
