@@ -35,7 +35,9 @@ export default function Login() {
   function ir_RecEmail() {
     navigate("RecEmail");
   }
-
+ function ir_LoginSV() {
+  navigate("Home");
+ }
   async function ir_login() {
     const obj = { usuario, senha };
     // console.log("DADOS ---->", obj);
@@ -90,7 +92,7 @@ export default function Login() {
 
         <TouchableOpacity
           style={[styles.buttonContainer, styles.loginButton]}
-          onPress={ir_login}
+          onPress={ir_LoginSV}
         >
           <Text style={styles.loginText}> Entrar</Text>
         </TouchableOpacity>

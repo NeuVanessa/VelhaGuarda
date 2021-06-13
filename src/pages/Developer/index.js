@@ -22,24 +22,9 @@ export default function Developer() {
     "https://media-exp1.licdn.com/dms/image/C5603AQFGoIYw91Kyhw/profile-displayphoto-shrink_800_800/0/1612526800820?e=1626307200&v=beta&t=6_LIo6TjRLHRHQLFI4NeV28Xvy5MuREArjIXGXInyn8";
   
 
-  function isRezenaldo() {
-    Linking.openURL("https://github.com/Joaorza3");
-  }
   function isVanessa() {
     Linking.openURL("https://github.com/NeuVanessa");
   }
-  function isMichel() {
-    Linking.openURL("https://github.com/michelbass23");
-  }
-
-  const rozenaldo = {
-    nome: "Rozenaldo Filho",
-    curso: "Análise e Desenvolvimento de Sistemas",
-    semestre: 3,
-    linkedin: linkedin,
-    github: isRezenaldo,
-    uri: URL,
-  };
 
   const vanessa = {
     nome: "Vanessa Lopes",
@@ -48,24 +33,6 @@ export default function Developer() {
     linkedin: false,
     github: isVanessa,
     uri: URLV,
-  };
-
-  const michel = {
-    nome: "Michel Ribeiro",
-    curso: "Análise e Desenvolvimento de Sistemas",
-    semestre: 5,
-    linkedin: false,
-    github: isMichel,
-    uri: URLM,
-  };
-
-  const giovana = {
-    nome: "Giovana Almeida",
-    curso: "Análise e Desenvolvimento de Sistemas",
-    semestre: 5,
-    linkedin: false,
-    github: false,
-    uri:  URL,
   };
 
 
@@ -78,18 +45,8 @@ export default function Developer() {
       </View>
 
       <View style={styles.Dados}>
-        {/* Aluno1 */}
-        <TouchableOpacity
-          style={styles.Botao}
-          onPress={() => {
-            setDev(rozenaldo);
-            setModalVisible(true);
-          }}
-        >
-          <Text style={styles.BotaoTxt}>Rozenaldo</Text>
-        </TouchableOpacity>
 
-        {/* Aluno2 */}
+        {/* Dev */}
         <TouchableOpacity
           style={styles.Botao}
           onPress={() => {
@@ -99,32 +56,9 @@ export default function Developer() {
         >
           <Text style={styles.BotaoTxt}>Vanessa</Text>
         </TouchableOpacity>
-
-        {/* Aluno3 */}
-        <TouchableOpacity
-          style={styles.Botao}
-          onPress={() => {
-            setDev(michel);
-            setModalVisible(true);
-          }}
-        >
-          <Text style={styles.BotaoTxt}>Michel</Text>
-        </TouchableOpacity>
-
-
-            {/* Aluno4 */}
-            <TouchableOpacity
-          style={styles.Botao}
-          onPress={() => {
-            setDev(giovana);
-            setModalVisible(true);
-          }}
-        >
-          <Text style={styles.BotaoTxt}>Giovana</Text>
-        </TouchableOpacity>
       </View>
 
-      {/* Dados Desenvolvedores */}
+      {/* Dados Desenvolvedor */}
       <Modal visible={modalVisible} animationType="fade">
         <View style={styles.popup}>
           <Text style={styles.TextDev}>Nome: {dev.nome}</Text>
