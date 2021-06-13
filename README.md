@@ -11,6 +11,6 @@
 
 <h2 align="center">Saiba Mais</h2>
 <p align="center">
-<img width="150" src="./.github/info2.png" />
+<img  src="./.github/info2.png" />
 
 </p>
